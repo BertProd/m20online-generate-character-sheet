@@ -1,0 +1,22 @@
+{
+    "name": "bertprod/m20online-generate-character-sheet",
+    "type": "project",
+    "description": "Project to deploy Microlite20 character sheet generation on your website",
+    "keywords": ["RPG", "TTRPG", "Microlite20"],
+    "homepage": "https://github.com/BertProd/m20online-generate-character-sheet",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bertrand Andres",
+            "email": "bertrand.andres.dev@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "bertprod/m20onlinecore": "^0.1.2",
+        "bertprod/translate": "^0.1.0",
+        "slim/slim": "4.*",
+        "twig/twig": "^2.0"
+    }
+}
