@@ -14,9 +14,12 @@
     ],
     "require": {
         "php": ">=7.3",
-        "bertprod/m20onlinecore": "^0.1.2",
+        "bertprod/m20onlinecore": "^0.2.0",
         "bertprod/translate": "^0.1.0",
         "slim/slim": "4.*",
-        "twig/twig": "^2.0"
+        "slim/psr7": "^1.4",
+        "slim/twig-view": "^3.2",
+        "php-di/php-di": "^6.3",
+        "twbs/bootstrap": "5.1.1"
     }
 }

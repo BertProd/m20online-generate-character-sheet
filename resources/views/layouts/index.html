@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microlite 20 character sheet generator</title>
+</head>
+<body>
+    <h1>Generate character sheet</h1>
+
+    <form method="post" action="/generate">
+        <p>
+            <label for="race">Race</label>
+            <select id="race" name="race">
+                <option value="0">Choose</option>
+            </select>
+        </p>
+        <p>
+            <label for="job">Job</label>
+            <select id="job" name="job">
+                <option value="0">Choose</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Generate character sheet">
+        </p>
+    </form>
+</body>
+</html>
