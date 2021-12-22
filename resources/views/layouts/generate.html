@@ -1,0 +1,155 @@
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Microlite 20 character sheet generator</title>
+
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+        <style type="text/css">
+            @media print {
+                .col-print-3 {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                    margin-left:20px;
+                } 
+                .col-print-9 {
+                    flex: 0 0 70%;
+                    max-width: 70%;
+                    padding-left:5%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Microlite 20</h1>
+            </div>
+            <div class="row">
+                <div class="col col-sm-3 col-print-3">
+                    <h3>{{ name }}</h3>
+                    <p>
+                        Race: {{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::FIELD_RACE')) }}<br>
+                        Job: {{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::FIELD_JOB')) }}<br>
+                        Level: {{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::FIELD_LEVEL')) }}<br>
+                        HP: {{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::FIELD_HP')) }}
+                    </p>
+                    <h4>Skills</h4>
+                    <h5>Physical (+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::SKILL_PHYSICAL')) }})</h5>
+                    <ul>
+                        <li>Climb</li>
+                        <li>Swim</li>
+                        <li>Jump</li>
+                    </ul>
+                    <h5>Subterfuge (+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::SKILL_SUBTERFUGE')) }})</h5>
+                    <ul>
+                        <li>Silent walk</li>
+                        <li>Discretion/Perception</li>
+                        <li>Escape/Hide</li>
+                        <li>Pick-pocketing</li>
+                        <li>Lockpicking</li>
+                    </ul>
+                    <h5>Knowledge (+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::SKILL_KNOWLEDGE')) }})</h5>
+                    <ul>
+                        <li>Search</li>
+                        <li>Decipher</li>
+                        <li>Estimate</li>
+                    </ul>
+                    <h5>Communication (+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::SKILL_COMMUNICATION')) }})</h5>
+                    <ul>
+                        <li>Disguise</li>
+                        <li>Intimidation</li>
+                        <li>Bluff</li>
+                        <li>Information</li>
+                    </ul>
+                    <h5>Survival</h5>
+                    <ul>
+                        <li>Tracking</li>
+                        <li>Hunt</li>
+                        <li>Manage traps</li>
+                        <li>Seek for water</li>
+                    </ul>
+                </div>
+                <div class="col col-sm-9 col-print-9">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Strength</th>
+                                <th>Dexterity</th>
+                                <th>Mind</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Value</td>
+                                <td>{{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_STR')) }}</td>
+                                <td>{{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_DEX')) }}</td>
+                                <td>{{ character.get(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_MIND')) }}</td>
+                            </tr>
+                            <tr>
+                                <td>Bonus</td>
+                                <td>+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_STR')) }}</td>
+                                <td>+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_DEX')) }}</td>
+                                <td>+{{ character.getBonus(constant('M20OnlineCore\\Entity\\CharacterEntity::STAT_MIND')) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Armor class</h4>
+                    <table class="mb-3 table">
+                        <thead>
+                            <tr>
+                                <th>Armor</th>
+                                <th>Name</th>
+                                <th>AC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Weapon</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Weapon</th>
+                                <th>Name</th>
+                                <th>Damage</th>
+                                <th>Range</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    </body>
+</html>

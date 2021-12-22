@@ -5,26 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microlite 20 character sheet generator</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Generate character sheet</h1>
+    <div class="container">
+        <div class="row">
+            <h1>Generate character sheet for Microlite 20 system</h1>
+        </div>
+        <div class="row">
+            <form method="post" action="/generate">
+                <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" maxlength="80" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="race">Race</label>
+                    <select id="race" name="race" class="form-control">
+                        <option value="0">Choose</option>
+        
+                        {% for race in raceIterator %}
+                            <option value="{{ race }}">{{ race|capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="job">Job</label>
+                    <select id="job" name="job" class="form-control">
+                        <option value="0">Choose</option>
+        
+                        {% for job in jobIterator %}
+                            <option value="{{ job }}">{{ job|capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Generate character sheet">
+                </div>
+            </form>
+        </div>
+    </div>
+    
 
-    <form method="post" action="/generate">
-        <p>
-            <label for="race">Race</label>
-            <select id="race" name="race">
-                <option value="0">Choose</option>
-            </select>
-        </p>
-        <p>
-            <label for="job">Job</label>
-            <select id="job" name="job">
-                <option value="0">Choose</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" value="Generate character sheet">
-        </p>
-    </form>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

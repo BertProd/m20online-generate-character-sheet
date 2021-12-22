@@ -20,6 +20,19 @@
         "slim/psr7": "^1.4",
         "slim/twig-view": "^3.2",
         "php-di/php-di": "^6.3",
-        "twbs/bootstrap": "5.1.1"
+        "twbs/bootstrap": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "M20Sheet\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "M20Sheet\\Composer\\Helper\\BootstrapHelper::deployBootstrap"
+        ],
+        "post-update-cmd": [
+            "M20Sheet\\Composer\\Helper\\BootstrapHelper::deployBootstrap"
+        ]
     }
 }
